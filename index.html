@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PHÚC NÈ SYSTEM</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div id="background"></div>
+
+    <!-- IDE -->
+
+    <div class="editor">
+
+        <!-- Top Bar -->
+
+        <div class="topbar">
+
+            <div class="buttons">
+
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+
+            </div>
+
+            <div class="title">
+
+                PHÚC NÈ SYSTEM
+
+            </div>
+
+        </div>
+
+        <!-- Workspace -->
+
+        <div class="workspace">
+
+            <!-- Explorer -->
+
+            <aside class="sidebar">
+
+                <div class="explorer-title">
+
+                    EXPLORER
+
+                </div>
+
+                <div class="file active">
+
+                    📄 main.cpp
+
+                </div>
+
+                <div class="file">
+
+                    📄 engine.cpp
+
+                </div>
+
+                <div class="file">
+
+                    📄 renderer.cpp
+
+                </div>
+
+                <div class="file">
+
+                    📄 particle.cpp
+
+                </div>
+
+                <div class="file">
+
+                    📄 heart.cpp
+
+                </div>
+
+            </aside>
+
+            <!-- Code -->
+
+            <main class="editor-area">
+
+                <pre id="screen"></pre>
+
+            </main>
+
+        </div>
+
+        <!-- Status -->
+
+        <div class="statusbar">
+
+            <span>C++</span>
+
+            <span>UTF-8</span>
+
+            <span>Ln 1</span>
+
+            <span id="status">
+
+                Ready
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Canvas -->
+
+    <canvas id="canvas"></canvas>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
