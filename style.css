@@ -95,7 +95,7 @@ body {
 .heart-pop {
     position: absolute;
     font-size: 24px;
-    animation: flyUp 3s forwards ease-out;
+    animation: flyUp 1s forwards ease-out;
     pointer-events: none;
     z-index: 1;
 }
