@@ -2,7 +2,7 @@ const screen = document.getElementById("screen");
 
 const lines = [
 
-    "[BOOT] Li Xun System v1.0",
+    "[BOOT] PHÚC nè System v1.0",
     "",
     "[OK] Loading kernel...",
     "[OK] Initializing memory...",
