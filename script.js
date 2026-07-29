@@ -3,30 +3,39 @@ const textQuestion = document.getElementById('textQuestion');
 const cardIcon = document.getElementById('cardIcon');
 const btnContainer = document.querySelector('.btn-container');
 
-// Hàm làm nút "Không" tự động nhảy trốn khi rê chuột hoặc chạm vào
+// Hàm xử lý việc nhảy trốn
 function runAway() {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
-    // Tính toán vị trí ngẫu nhiên giữ nút nằm trong màn hình nhìn thấy được
+    // Tính toán vị trí ngẫu nhiên và giữ nút không bay ra ngoài màn hình
     const randomX = Math.max(20, Math.random() * (windowWidth - btnNo.offsetWidth - 40));
     const randomY = Math.max(20, Math.random() * (windowHeight - btnNo.offsetHeight - 40));
 
-    // Đổi nút sang trạng thái cố định toàn màn hình để nhảy tự do
+    // Chuyển nút sang trạng thái fixed để bay tự do
     btnNo.style.position = 'fixed';
     btnNo.style.left = randomX + 'px';
     btnNo.style.top = randomY + 'px';
 }
+
+// Bắt sự kiện khi rê chuột vào (Dành cho Máy tính)
+btnNo.addEventListener('mouseover', runAway);
+
+// Bắt sự kiện khi vừa chạm tay vào (Dành cho Điện thoại)
+btnNo.addEventListener('touchstart', function(e) {
+    e.preventDefault(); // Ngăn hành vi click mặc định của điện thoại
+    runAway();
+});
 
 // Hàm xử lý khi bấm nút "Có chứ!"
 function loveAccepted() {
     textQuestion.innerHTML = "Tớ biết ngay mà! 🥰<br>Nhắn tin cho tớ liền đi nhaaa!";
     cardIcon.innerHTML = "🎉🥳";
     
-    // Ẩn 2 nút bấm đi
+    // Ẩn hai nút bấm
     btnContainer.style.display = 'none';
 
-    // Tạo hiệu ứng bắn tim liên tục trong 3 giây
+    // Tạo hiệu ứng pháo hoa trái tim liên tục trong 3 giây
     const duration = 3000;
     const end = Date.now() + duration;
 
@@ -38,7 +47,7 @@ function loveAccepted() {
     }, 80);
 }
 
-// Hàm tạo các trái tim bay lên
+// Tạo từng trái tim bay ngẫu nhiên
 function createHeartPop() {
     const heart = document.createElement('div');
     heart.classList.add('heart-pop');
@@ -48,7 +57,6 @@ function createHeartPop() {
     
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.bottom = '0px';
-    
     heart.style.animationDuration = (Math.random() * 2 + 1) + 's';
     
     document.body.appendChild(heart);
