@@ -82,12 +82,13 @@ body {
 }
 
 /* Nút Không (Sẽ nhảy trốn) */
-#btnNo {
+  #btnNo {
     background-color: #ffffff;
     color: #666;
-    position: absolute;
-    right: 40px; 
-    transition: all 0.1s ease-out; /* Tạo hiệu ứng lướt đi mượt mà */
+    border: 1px solid #ddd;
+    /* Dán thêm dòng dưới đây để nút lướt đi mượt và ở lại lâu hơn */
+    transition: left 0.4s ease-out, top 0.4s ease-out, background-color 0.3s, box-shadow 0.2s; 
+}
 }
 
 /* Hiệu ứng trái tim bay khi đồng ý */
