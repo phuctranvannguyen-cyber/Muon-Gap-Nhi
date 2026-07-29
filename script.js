@@ -224,8 +224,6 @@ typeWriter();
 
 }
 #include <iostream>
-
-class HeartEngine
 {
 public:
 
