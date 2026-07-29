@@ -1,0 +1,190 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #ffd6e7,
+        #ffc1dd,
+        #ffb5d6,
+        #ffd8ea
+    );
+
+    font-family:sans-serif;
+}
+
+.scene{
+    perspective:1200px;
+}
+
+.heart-box{
+    transform-style:preserve-3d;
+    animation:
+        rotateHeart 12s linear infinite,
+        floatHeart 4s ease-in-out infinite;
+}
+
+.heart{
+
+    position:relative;
+
+    width:220px;
+    height:220px;
+
+    background:linear-gradient(
+        145deg,
+        #ffd8ea,
+        #ff8fc1,
+        #ff5ea7
+    );
+
+    transform:
+        rotate(-45deg);
+
+    border-radius:30px;
+
+    box-shadow:
+        0 0 30px #ff9fcf,
+        0 0 60px #ff8ebe,
+        0 0 100px #ff7db6;
+
+    animation:
+        beat 1.2s ease-in-out infinite;
+}
+
+.heart::before,
+.heart::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    background:inherit;
+
+    border-radius:50%;
+}
+
+.heart::before{
+    top:-110px;
+    left:0;
+}
+
+.heart::after{
+    left:110px;
+    top:0;
+}
+
+.heart::before,
+.heart::after,
+.heart{
+
+    filter:
+        drop-shadow(0 0 18px #fff)
+        drop-shadow(0 0 45px #ff8dc4);
+}
+
+@keyframes beat{
+
+    0%{
+        transform:rotate(-45deg) scale(1);
+    }
+
+    20%{
+        transform:rotate(-45deg) scale(1.08);
+    }
+
+    40%{
+        transform:rotate(-45deg) scale(.98);
+    }
+
+    60%{
+        transform:rotate(-45deg) scale(1.12);
+    }
+
+    100%{
+        transform:rotate(-45deg) scale(1);
+    }
+
+}
+
+@keyframes rotateHeart{
+
+    from{
+        transform:rotateY(0deg);
+    }
+
+    to{
+        transform:rotateY(360deg);
+    }
+
+}
+
+@keyframes floatHeart{
+
+    0%,100%{
+        translate:0 0;
+    }
+
+    50%{
+        translate:0 -20px;
+    }
+
+}
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.sparkle{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:.8;
+
+    animation:fly linear forwards;
+}
+
+@keyframes fly{
+
+    from{
+        transform:
+            translateY(0)
+            scale(0);
+        opacity:1;
+    }
+
+    to{
+        transform:
+            translateY(-250px)
+            scale(1.8);
+        opacity:0;
+    }
+
+}
