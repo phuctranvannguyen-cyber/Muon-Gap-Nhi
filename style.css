@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffe6e6; /* Nền hồng nhạt sạch sẽ */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.15);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    max-width: 90%;
+    width: 420px;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+/* Biểu tượng gấu/tim trang trí phía trên */
+.icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.question {
+    font-size: 24px;
+    color: #ff4d6d;
+    font-weight: 700;
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
+
+/* Khu vực chứa 2 nút */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    height: 60px;
+    position: relative;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+/* Nút Có */
+#btnYes {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#btnYes:hover {
+    transform: scale(1.1);
+    background-color: #ff758f;
+}
+
+/* Nút Không (Sẽ nhảy trốn) */
+#btnNo {
+    background-color: #ffffff;
+    color: #666;
+    position: absolute;
+    right: 40px; 
+    transition: all 0.1s ease-out; /* Tạo hiệu ứng lướt đi mượt mà */
+}
+
+/* Hiệu ứng trái tim bay khi đồng ý */
+.heart-pop {
+    position: absolute;
+    font-size: 24px;
+    animation: flyUp 3s forwards ease-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes flyUp {
+    0% {
+        transform: translateY(0) scale(0.5) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5) rotate(360deg);
+        opacity: 0;
+    }
+}
