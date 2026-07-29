@@ -15,29 +15,75 @@
 
 <body>
 
+<body>
+
 <div id="background"></div>
 
-<div class="terminal">
+<div class="editor">
 
-    <div class="header">
+    <div class="topbar">
 
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
+        <div class="buttons">
 
-        <span class="title">
-            PHÚC nè SYSTEM
-        </span>
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+
+        </div>
+
+        <div class="filename">
+            main.cpp
+        </div>
 
     </div>
 
-    <div id="screen"></div>
+    <div class="workspace">
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <div class="file active">main.cpp</div>
+
+            <div class="file">engine.cpp</div>
+
+            <div class="file">particle.cpp</div>
+
+            <div class="file">heart.cpp</div>
+
+            <div class="file">render.cpp</div>
+
+        </div>
+
+        <!-- Editor -->
+
+        <div class="code">
+
+<pre id="screen"></pre>
+
+        </div>
+
+    </div>
+
+    <div class="status">
+
+        <span>C++</span>
+
+        <span>UTF-8</span>
+
+        <span>Ln 1</span>
+
+        <span id="fps">60 FPS</span>
+
+    </div>
 
 </div>
 
 <canvas id="canvas"></canvas>
 
 <script src="script.js"></script>
+
+</body>
 
 </body>
 
