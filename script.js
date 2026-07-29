@@ -223,3 +223,24 @@ typeWriter();
     font-size:14px;
 
 }
+#include <iostream>
+
+class HeartEngine
+{
+public:
+
+    void Compile();
+    void Render();
+
+};
+
+int main()
+{
+
+    HeartEngine app;
+
+    app.Compile();
+
+    app.Render();
+
+}
