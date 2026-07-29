@@ -86,9 +86,9 @@ body {
     background-color: #ffffff;
     color: #666;
     border: 1px solid #ddd;
-    /* Dán thêm dòng dưới đây để nút lướt đi mượt và ở lại lâu hơn */
-    transition: left 0.4s ease-out, top 0.4s ease-out, background-color 0.3s, box-shadow 0.2s; 
-}
+    /* Chỉnh left và top thành 5s để nút lướt đi siêu chậm rãi trong 5 giây */
+    transition: left 5s ease-out, top 5s ease-out, background-color 0.3s, box-shadow 0.2s; 
+
 }
 
 /* Hiệu ứng trái tim bay khi đồng ý */
