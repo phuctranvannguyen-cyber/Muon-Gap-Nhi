@@ -1,0 +1,403 @@
+/* ===========================
+   Reset
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:"Segoe UI",sans-serif;
+}
+
+/* ===========================
+   Background
+=========================== */
+body{
+    background:linear-gradient(
+        to bottom,
+        #07111f 0%,
+        #162447 45%,
+        #241734 100%
+    );
+}
+
+/* ===========================
+   Canvas
+=========================== */
+#sky{
+    position:fixed;
+    inset:0;
+    z-index:1;
+}
+
+/* ===========================
+   Moon
+=========================== */
+.moon{
+
+    position:absolute;
+
+    top:70px;
+    right:90px;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#fff9d6;
+
+    box-shadow:
+        0 0 20px #fff,
+        0 0 60px #fff8b0,
+        0 0 120px #ffe27a;
+
+    animation:moonGlow 4s infinite alternate;
+
+    z-index:2;
+
+}
+
+@keyframes moonGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.05);
+    }
+
+}
+
+/* ===========================
+   Center
+=========================== */
+
+.container{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:10;
+
+}
+
+/* ===========================
+   Heart
+=========================== */
+
+.heart{
+
+    width:180px;
+    height:180px;
+
+    background:#ff4f8f;
+
+    transform:rotate(-45deg);
+
+    position:relative;
+
+    animation:heartbeat 1.4s infinite;
+
+    box-shadow:
+        0 0 30px #ff4f8f,
+        0 0 80px #ff4f8f;
+
+}
+
+.heart:before,
+.heart:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:#ff4f8f;
+
+}
+
+.heart:before{
+
+    top:-90px;
+    left:0;
+
+}
+
+.heart:after{
+
+    left:90px;
+    top:0;
+
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+
+        transform:rotate(-45deg) scale(1);
+
+    }
+
+    50%{
+
+        transform:rotate(-45deg) scale(1.12);
+
+    }
+
+}
+
+/* ===========================
+   Text
+=========================== */
+
+.message{
+
+    position:absolute;
+
+    text-align:center;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+#title{
+
+    color:#ff7ab8;
+
+    font-size:56px;
+
+    margin-bottom:20px;
+
+    text-shadow:
+
+        0 0 10px #ff4f8f,
+        0 0 20px #ff4f8f,
+        0 0 40px #ff4f8f;
+
+}
+
+.line{
+
+    color:white;
+
+    font-size:28px;
+
+    margin:12px;
+
+    text-shadow:
+
+        0 0 10px white,
+        0 0 20px pink;
+
+}
+
+.small{
+
+    margin-top:35px;
+
+    font-size:20px;
+
+    color:#ffe8f3;
+
+}
+
+/* ===========================
+   Floating
+=========================== */
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+/* ===========================
+   Sakura
+=========================== */
+
+#petals{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:5;
+
+}
+
+.petal{
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    background:#ffc6df;
+
+    border-radius:60% 40% 60% 40%;
+
+    opacity:.9;
+
+    animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+    from{
+
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translateY(110vh)
+            translateX(120px)
+            rotate(720deg);
+
+    }
+
+}
+
+/* ===========================
+   Flying Hearts
+=========================== */
+
+#hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:20;
+
+}
+
+.fly-heart{
+
+    position:absolute;
+
+    color:#ff4f8f;
+
+    font-size:22px;
+
+    animation:fly 2s linear forwards;
+
+}
+
+@keyframes fly{
+
+    from{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+            translateY(-180px)
+            scale(2);
+
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:768px){
+
+    .heart{
+
+        width:130px;
+        height:130px;
+
+    }
+
+    .heart:before,
+    .heart:after{
+
+        width:130px;
+        height:130px;
+
+    }
+
+    .heart:before{
+
+        top:-65px;
+
+    }
+
+    .heart:after{
+
+        left:65px;
+
+    }
+
+    #title{
+
+        font-size:38px;
+
+    }
+
+    .line{
+
+        font-size:20px;
+
+    }
+
+    .small{
+
+        font-size:16px;
+
+    }
+
+}
